@@ -98,7 +98,7 @@ made. TraceLine does not control equipment or certify that an action is safe.
 | `PROJECT_SUMMARY.md` | Project summary: problem, solution, impact |
 | `TECHNICAL_DOCUMENTATION.md` | Architecture, technologies, implementation approach, setup |
 | `DEMO_SCRIPT.md` | Timed walkthrough |
-| `EVALUATION.md` | Verification performed and proposed benchmark |
+| `EVALUATION.md` | Verification performed, and what was not verified |
 | `assets/` | Screenshots of each demonstrated state |
 
 ## Screenshots
