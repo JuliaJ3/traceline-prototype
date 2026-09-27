@@ -121,7 +121,7 @@ equipment, diagnose physical faults, or authorize work.
 | 03 | Demo video | Recording made from the timed shot list in `DEMO_SCRIPT.md` — 3:51, opening through control condition. Link below. |
 | 04 | Source code | https://github.com/JuliaJ3/traceline-prototype — complete, 3 source files, no build artifacts. |
 | 05 | Technical documentation | `TECHNICAL_DOCUMENTATION.md` — solution architecture, technologies used, implementation approach, setup instructions. |
-| 06 | Presentation deck | `PITCH_DECK.html` — 11 sheets covering problem, approach, the four demonstrated states, architecture, stated limits and scalability. Open in a browser to present; print to PDF for a slide file. |
+| 06 | Presentation deck | `PITCH_DECK.pdf` — 11 sheets, A4 landscape, covering problem, approach, the four demonstrated states, architecture, stated limits and scalability. Source: `PITCH_DECK.html`, which can also be presented directly in a browser. |
 | — | Verification record | `EVALUATION.md` — what was tested, how, and what was not. |
 
 **02 and 04 are different artifacts of the same code.** 04 is the source a judge
@@ -198,7 +198,7 @@ minute. It also runs locally with the instructions above.
   evidence list, `aria-pressed` toggles, live regions, and a layout that holds at
   400px.
 - **Presentation & demo (10%)** — `DEMO_SCRIPT.md` is a timed walkthrough whose
-  spine is the conflict-to-confirmation flow, and `PITCH_DECK.html` presents the
+  spine is the conflict-to-confirmation flow, and `PITCH_DECK.pdf` presents the
   same argument as 11 sheets whose figures are taken from the running engine.
 
 ## Theme 2 focus-area fit

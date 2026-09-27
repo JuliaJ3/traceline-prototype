@@ -98,7 +98,8 @@ made. TraceLine does not control equipment or certify that an action is safe.
 | `PROJECT_SUMMARY.md` | Project summary: problem, solution, impact |
 | `TECHNICAL_DOCUMENTATION.md` | Architecture, technologies, implementation approach, setup |
 | `DEMO_SCRIPT.md` | Timed walkthrough |
-| `PITCH_DECK.html` | Presentation sheets — open in a browser, print to PDF |
+| `PITCH_DECK.html` | Presentation sheets — open in a browser to present |
+| `PITCH_DECK.pdf` | The same 11 sheets as a slide file, A4 landscape |
 | `EVALUATION.md` | Verification performed, and what was not verified |
 | `assets/` | Screenshots of each demonstrated state |
 
