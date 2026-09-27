@@ -66,25 +66,5 @@ link, `aria-live` ledger updates, and layout at 400px width.
 These are behavior checks. They are **not** an industrial accuracy evaluation, and
 nothing here measures whether a real technician is faster or safer.
 
-## Proposed benchmark
-
-Not run. Recorded so the claim stays honest about what would be required.
-
-The idea phase proposed 60 cases — 20 development, 40 held out — spanning ordinary
-lookup, table lookup, diagram reference, revision conflict, unanswerable
-questions, and adversarial instructions embedded in source documents. Compare PDF
-search, text-only RAG and TraceLine over the same permitted corpus.
-
-Report with case counts and confidence intervals where practical:
-
-- Claim-level citation support
-- Applicability errors, separated into wrong-model and wrong-revision
-- Correct abstention on unanswerable questions
-- Answer coverage and clarification rate
-- Median evidence-finding time on matched tasks
-- Table and diagram region retrieval accuracy
-- Behavior on adversarial instructions embedded in documents
-
-The idea-phase targets — 90% claim-level citation support and a 25% reduction in
-median evidence-finding time — are **hypotheses to test, not results.** This build
+potheses to test, not results.** This build
 measures neither.
