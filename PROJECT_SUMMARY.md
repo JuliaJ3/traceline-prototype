@@ -118,7 +118,7 @@ equipment, diagnose physical faults, or authorize work.
 |---|---|---|
 | 01 | Project summary | This file — problem, solution, impact. |
 | 02 | Working prototype | The running application: live at `https://juliaj3.github.io/traceline-prototype/` (GitHub Pages, no backend), or locally in two commands — see [Setup instructions](TECHNICAL_DOCUMENTATION.md#setup-instructions). Eight-step verification walkthrough included there. |
-| 03 | Demo video | Recording made from the timed shot list in `DEMO_SCRIPT.md`. Link below. |
+| 03 | Demo video | Recording made from the timed shot list in `DEMO_SCRIPT.md` — 3:50, opening through control condition. Link below. |
 | 04 | Source code | https://github.com/JuliaJ3/traceline-prototype — complete, 3 source files, no build artifacts. |
 | 05 | Technical documentation | `TECHNICAL_DOCUMENTATION.md` — solution architecture, technologies used, implementation approach, setup instructions. |
 | 06 | Presentation deck (optional) | Not submitted. `PROJECT_SUMMARY.md` and `TECHNICAL_DOCUMENTATION.md` cover the same ground. |

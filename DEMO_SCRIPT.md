@@ -1,136 +1,172 @@
 # Demo walkthrough
 
-**Target length: 2:20. Hard ceiling 2:30.**
+**Runtime: 3:50 as written. 4:05 with the optional beat. Ceiling 4:15.**
 
-One idea per beat, in one direction: *a citation can be real and still wrong →
-TraceLine refuses to pick → a photo suggests but does not decide → the technician
-confirms and the scope resolves → when nothing applies it says so → and here is
-the failure it prevents.* Nothing in the script asks the viewer to hold two
-threads at once.
+The timings below are not aspirational — they are computed from the word count of
+each narration block at 145 words per minute, plus the seconds each click needs
+to land on screen. If you speak at a normal pace and do not improvise, the
+recording comes in at 3:50. Narration totals 457 words.
+
+**The spine.** One idea per beat, in one direction: *a citation can be real and
+still wrong → TraceLine refuses to pick → a photo suggests but does not decide →
+the technician confirms and the scope resolves → when nothing applies it says so
+→ and here is the failure it prevents.* The opening earns the viewer's attention
+before any interface appears; the closing states what the prototype argues, not
+what it contains. Nothing asks the viewer to hold two threads at once.
 
 Record against the live URL: <https://juliaj3.github.io/traceline-prototype/>
 
 Every control name below appears on screen exactly as written. Say "synthetic
-corpus" once, in beat 1, and never again — the header chip carries it.
+corpus" once, in the opening, and never again — the header chip carries it.
 
 ---
 
-## Beat 1 · 0:00–0:14 | The failure mode
+## Opening · 0:00–0:37 | Earn the attention before showing the tool
 
-**On screen:** default state. Badge reads **Clarification needed**.
-**Do:** nothing. Let the ledger sit.
+**On screen:** default state, untouched. Badge reads **Clarification needed**.
+**Do:** nothing at all. No cursor movement. Let the still frame hold.
 
-> "This is a citation that is real, from a real page, and wrong — because the
-> document covers a different revision of the machine. That failure looks
-> identical to a correct answer. TraceLine exists to catch it. Every record here
-> is synthetic."
+> "A technician is standing at a machine that has stopped. The panel shows a
+> fault code. The answer is somewhere in the documentation — and what decides
+> whether it is the right answer is not the sentence that answers the question.
+> It is the revision table on the front page.
+>
+> This is TraceLine: a maintenance assistant whose job is not to answer faster,
+> but to refuse to answer when it cannot do it honestly. It runs in the browser,
+> on a synthetic corpus."
 
 ---
 
-## Beat 2 · 0:14–0:42 | It cites both and picks neither
+## Beat 1 · 0:37–0:55 | Name the failure mode
+
+**Do:** point the cursor at the badge and leave it there.
+
+> "The failure it targets is not a missing answer. It is a citation that is real,
+> from a real page, and wrong — because the document covers a different revision
+> of the machine. That looks identical to a correct answer."
+
+---
+
+## Beat 2 · 0:55–1:31 | It cites both and picks neither
 
 **On screen:** the two rows under **Source-supported statements**.
-**Do:** point at the badge, then at each row, then at the **Needed to resolve**
-line at the bottom of the ledger.
+**Do:** point at each row in turn, then at the **Needed to resolve** line at the
+bottom of the ledger.
 
-> "Fault F12 on this drive. Two records match and they disagree — a service note
-> scoped to firmware 2.4.1, a troubleshooting table scoped to 2.3.8, mapping F12
-> to different things. The asset firmware is unconfirmed, so TraceLine cites both
-> and selects neither. And it names the one field that would settle it:
-> firmware."
+> "Fault F12 on this drive. Two records match and they disagree — one scoped to
+> firmware 2.4.1, one to 2.3.8, mapping F12 to different things. The firmware is
+> unconfirmed, so TraceLine cites both, selects neither, and names the field that
+> would settle it."
 
 **Do:** point at the row under **Technician observations · not
 document-supported**.
 
-> "A maintenance log on this same asset also mentions F12. It is shown, and it is
-> labelled — but it is excluded from the disagreement and from cited support. A
-> field note is not a controlled document."
+> "A maintenance log also mentions F12. It is shown and labelled — but excluded
+> from the disagreement and from cited support. A field note is not a controlled
+> document."
 
 ---
 
-## Beat 3 · 0:42–1:00 | Every claim opens its region
+## Beat 3 · 1:31–1:51 | Every claim opens its region
 
-**Do:** click **Inspect SRC-014 · p. 4 · region 2**, then **Inspect SRC-021**, then
-click the wiring drawing in **Retrieved evidence**.
+**Do:** click **Inspect SRC-014 · p. 4 · region 2**, then **Inspect SRC-021**,
+then click the wiring drawing in **Retrieved evidence**. Three clicks, evenly
+paced.
 
-> "Each statement opens the region it came from — a text excerpt, an extracted
-> table row, a diagram callout — with the record id, revision and page attached.
-> The numbers on the left are BM25 scores, per record, shown rather than hidden."
+> "Each statement opens the region it came from — an excerpt, a table row, a
+> diagram callout — with the record id, revision and page attached. The scores on
+> the left are BM25, per record, shown rather than hidden."
 
 ---
 
-## Beat 4 · 1:00–1:26 | A photo suggests
+## Beat 4 · 1:51–2:24 | A photo suggests
 
-**Do:** click **Use synthetic nameplate**. Wait for the read.
+**Do:** click **Use synthetic nameplate**. Wait for the read to finish before
+speaking — the six-second pause is budgeted.
 
 > "The technician photographs the nameplate. OCR suggests firmware 2.4.1 — and
-> it says *reconstructed*, because the read was imperfect. TraceLine matched the
-> digits against known releases instead of guessing a version that does not
-> exist."
+> says *reconstructed*, because the read was imperfect. TraceLine matched the
+> digits against known releases instead of inventing a version."
 
-**Do:** move the cursor back to the badge. It still reads **Clarification
-needed**. Hold for two seconds.
+**Do:** move the cursor to the badge. It still reads **Clarification needed**.
+Hold there.
 
-> "The suggestion is on screen. The answer has not moved. The firmware field
-> reads *OCR suggestion · unconfirmed*, and an unconfirmed value cannot scope
-> anything. Machine perception informs the technician; it does not stand in for
-> them."
+> "The suggestion is on screen. The answer has not moved. An unconfirmed value
+> cannot scope anything. Machine perception informs the technician; it does not
+> stand in for them."
 
 ---
 
-## Beat 5 · 1:26–1:50 | The technician decides
+## Beat 5 · 2:24–2:43 | The technician decides
 
 **Do:** click **Confirm 2.4.1** in the nameplate panel.
 
 > "Now a human confirms it."
 
-**On screen:** badge flips to **Context applied · scoped answer**; the firmware
+**On screen:** badge flips to **Context applied · scoped answer**; firmware
 provenance reads **Confirmed · user**.
 
-> "The ledger scopes to the 2.4.1 service note. The legacy table moves under
-> *Retrieved but out of scope*, marked *Different firmware scope* — excluded with
-> its reason visible, not quietly dropped."
+> "The ledger scopes to the 2.4.1 note. The legacy table moves under *Retrieved
+> but out of scope*, marked *Different firmware scope* — excluded with its reason
+> visible, not quietly dropped."
 
-**Do:** in the asset bar, switch **Firmware** to **2.3.8**.
+### Optional · +0:15
+
+**Do:** switch the asset-bar **Firmware** select to **2.3.8**.
 
 > "Confirm the other release and the scope inverts. No record is ever both cited
 > and excluded."
 
----
-
-## Beat 6 · 1:50–2:06 | Two ways to have no answer
-
-**Do:** click **Ask about F18** while firmware is still 2.3.8, then switch
-**Firmware** to **2.4.1**.
-
-> "F18 is in the corpus — but only in the 2.3.8 table. Confirm 2.4.1 and
-> TraceLine abstains: *Insufficient evidence*. The record exists, its scope does
-> not match, and it stays on screen as out of scope."
-
-**Do:** click **Ask something unsupported**.
-
-> "And when nothing in the corpus addresses the question at all, it abstains and
-> names what is missing instead of citing the nearest paragraph."
+This is the first thing to cut if you are running long. It strengthens the point
+but does not carry it.
 
 ---
 
-## Beat 7 · 2:06–2:20 | The control condition
+## Beat 6 · 2:43–3:06 | Two ways to have no answer
+
+**Do:** click **Ask about F18** while firmware is still 2.4.1. Then, after the
+second sentence, click **Ask something unsupported**.
+
+> "F18 is in the corpus, but only in the 2.3.8 table. Confirm 2.4.1 and TraceLine
+> abstains: *Insufficient evidence*. The record exists, its scope does not match,
+> and it stays on screen. When nothing matches at all, it abstains and names what
+> is missing."
+
+---
+
+## Beat 7 · 3:06–3:25 | The control condition
 
 **Do:** click **Reset scenario**, set **Firmware** to **2.4.1**, then click
 **Metadata filter** to turn it off.
 
-> "Here is the failure this prevents, reproduced on demand. With the
-> applicability check off, the same question cites four records — top-ranked is a
-> troubleshooting table for the AX-320 platform, on an AX-480 asset. Turn the
-> check back on and it is excluded with the reason stated. Forty-one unit tests
-> cover these rules. Next step is running the workflow against approved
-> documents with engineers reviewing the applicability labels."
+> "And here is the failure this prevents, on demand. With the applicability check
+> off, the same question cites four records — top-ranked is a table for the AX-320
+> platform, on an AX-480 asset."
 
 ---
 
-## Optional closing shot · +0:06
+## Closing · 3:25–3:50 | State the argument, not the feature list
 
-Terminal: `node --test tests/engine.test.mjs` → 41 pass. No narration.
+**Do:** click **Metadata filter** back on. The badge returns to **Context
+applied · scoped answer** with the legacy table excluded and its reason shown.
+Stop moving the cursor. Hold this frame to the end of the recording.
+
+> "Forty-one unit tests cover these rules, and none of the logic is specific to
+> drives or firmware. The same discipline applies anywhere evidence is scoped.
+>
+> The argument is narrow. An assistant that says *I need one more fact* is worth
+> more than one that answers everything confidently and is occasionally,
+> invisibly wrong. Thank you."
+
+The last frame is the treatment condition, not the failure — end on what the
+system does right, immediately after showing what it prevents.
+
+---
+
+## Optional extra shot · +0:06
+
+Terminal: `node --test tests/engine.test.mjs` → 41 pass. No narration. Place it
+after the closing, never inside it.
 
 ---
 
@@ -155,8 +191,11 @@ Non-negotiable, in this order:
   camera otherwise.
 - Browser at 100% zoom, window wide enough that the three columns stay side by
   side. Close extra tabs and hide bookmarks.
-- Narrate at a normal pace. If you run past 2:30, cut the firmware-inversion
-  sentence in beat 5 and the second half of beat 6 — not beat 7.
+- Leave two seconds of silence at the head and tail. The opening and closing both
+  need a still frame to land on.
+- **Cut order if you run past 4:15:** the optional beat in 5, then the second
+  half of beat 6, then the middle paragraph of the opening. Never cut beat 7 or
+  the closing — they are the argument.
 - Do not imply measured accuracy, ABB integration, or a real maintenance
   recommendation. The footer disclaimer does not cover a spoken claim.
 - Upload with link access enabled, then paste the URL into the **Video link**
