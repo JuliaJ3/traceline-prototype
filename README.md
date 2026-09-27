@@ -8,15 +8,26 @@ Ask it about fault F12 on a drive whose firmware is unconfirmed and it will not
 answer. It shows you that two source regions disagree, tells you which
 configuration field would settle it, and waits.
 
-## Run it
+## Live demo
+
+<https://juliaj3.github.io/traceline-prototype/> — fully static, served straight
+from this repository.
+
+## Run it locally
 
 ```
+git clone https://github.com/JuliaJ3/traceline-prototype.git
+cd traceline-prototype
 python3 -m http.server 8000
 ```
 
 Open `http://localhost:8000`. No build step, no API keys, no database, no
 install. One optional network fetch: the OCR engine loads from a CDN on first
-use, and the rest of the app works without it.
+use, and the rest of the app works without it. Do not open `index.html` over
+`file://` — ES modules will not load.
+
+Full setup, troubleshooting and a step-by-step verification walkthrough:
+[`TECHNICAL_DOCUMENTATION.md`](TECHNICAL_DOCUMENTATION.md#setup-instructions).
 
 ## Run the tests
 
@@ -84,8 +95,8 @@ made. TraceLine does not control equipment or certify that an action is safe.
 | `engine.js` | Retrieval, applicability, conflict detection, abstention — no DOM |
 | `app.js` | Rendering, event wiring, OCR intake, firmware parsing |
 | `tests/engine.test.mjs` | 41 unit tests |
-| `SUBMISSION.md` | Project summary and submission fields |
-| `TECHNICAL_NOTES.md` | Architecture, methods, limits, next steps |
+| `PROJECT_SUMMARY.md` | Project summary: problem, solution, impact |
+| `TECHNICAL_DOCUMENTATION.md` | Architecture, technologies, implementation approach, setup |
 | `DEMO_SCRIPT.md` | Timed walkthrough |
 | `EVALUATION.md` | Verification performed and proposed benchmark |
 | `assets/` | Screenshots of each demonstrated state |

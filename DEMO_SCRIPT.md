@@ -89,4 +89,4 @@ filter**.
 - Do not imply measured accuracy, ABB integration, or a real maintenance
   recommendation.
 - Optionally show `node --test tests/engine.test.mjs` passing as a closing shot.
-- Upload with link access enabled and paste the URL into `SUBMISSION.md`.
+- Upload with link access enabled and paste the URL into `PROJECT_SUMMARY.md`.
