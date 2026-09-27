@@ -1,11 +1,12 @@
 # Demo walkthrough
 
-**Runtime: 3:50 as written. 4:05 with the optional beat. Ceiling 4:15.**
+**Runtime: 3:51 as written. 4:01 with the optional beat. Ceiling 4:15.**
 
 The timings below are not aspirational — they are computed from the word count of
 each narration block at 145 words per minute, plus the seconds each click needs
 to land on screen. If you speak at a normal pace and do not improvise, the
-recording comes in at 3:50. Narration totals 457 words.
+recording comes in at 3:51. Narration totals 472 words, and no beat asks for
+more than 145 words per minute of actual speaking time.
 
 **The spine.** One idea per beat, in one direction: *a citation can be real and
 still wrong → TraceLine refuses to pick → a photo suggests but does not decide →
@@ -47,7 +48,7 @@ corpus" once, in the opening, and never again — the header chip carries it.
 
 ---
 
-## Beat 2 · 0:55–1:31 | It cites both and picks neither
+## Beat 2 · 0:55–1:29 | It cites both and picks neither
 
 **On screen:** the two rows under **Source-supported statements**.
 **Do:** point at each row in turn, then at the **Needed to resolve** line at the
@@ -67,7 +68,7 @@ document-supported**.
 
 ---
 
-## Beat 3 · 1:31–1:51 | Every claim opens its region
+## Beat 3 · 1:29–1:50 | Every claim opens its region
 
 **Do:** click **Inspect SRC-014 · p. 4 · region 2**, then **Inspect SRC-021**,
 then click the wiring drawing in **Retrieved evidence**. Three clicks, evenly
@@ -79,14 +80,15 @@ paced.
 
 ---
 
-## Beat 4 · 1:51–2:24 | A photo suggests
+## Beat 4 · 1:50–2:26 | A photo suggests
 
 **Do:** click **Use synthetic nameplate**. Wait for the read to finish before
 speaking — the six-second pause is budgeted.
 
-> "The technician photographs the nameplate. OCR suggests firmware 2.4.1 — and
-> says *reconstructed*, because the read was imperfect. TraceLine matched the
-> digits against known releases instead of inventing a version."
+> "The technician photographs the nameplate. OCR reads it and suggests firmware
+> 2.4.1, with the confidence it got. If the read is dirty the panel marks the
+> value *reconstructed* — TraceLine matches the digits against known releases
+> rather than inventing a version that does not exist."
 
 **Do:** move the cursor to the badge. It still reads **Clarification needed**.
 Hold there.
@@ -97,7 +99,7 @@ Hold there.
 
 ---
 
-## Beat 5 · 2:24–2:43 | The technician decides
+## Beat 5 · 2:26–2:45 | The technician decides
 
 **Do:** click **Confirm 2.4.1** in the nameplate panel.
 
@@ -110,7 +112,7 @@ provenance reads **Confirmed · user**.
 > but out of scope*, marked *Different firmware scope* — excluded with its reason
 > visible, not quietly dropped."
 
-### Optional · +0:15
+### Optional · +0:10
 
 **Do:** switch the asset-bar **Firmware** select to **2.3.8**.
 
@@ -122,7 +124,7 @@ but does not carry it.
 
 ---
 
-## Beat 6 · 2:43–3:06 | Two ways to have no answer
+## Beat 6 · 2:45–3:06 | Two ways to have no answer
 
 **Do:** click **Ask about F18** while firmware is still 2.4.1. Then, after the
 second sentence, click **Ask something unsupported**.
@@ -145,7 +147,7 @@ second sentence, click **Ask something unsupported**.
 
 ---
 
-## Closing · 3:25–3:50 | State the argument, not the feature list
+## Closing · 3:25–3:51 | State the argument, not the feature list
 
 **Do:** click **Metadata filter** back on. The badge returns to **Context
 applied · scoped answer** with the legacy table excluded and its reason shown.

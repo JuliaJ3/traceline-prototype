@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TraceLine Pitch Sheets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --ground:#e8ebec;
+  --sheet:#fbfcfc;
+  --sheet-alt:#20343e;
+  --ink:#18232b;
+  --ink-soft:#3d4d56;
+  --muted:#66747d;
+  --line:#d7dfe2;
+  --rule:#b8c4c9;
+  --red:#df3128;
+  --navy:#20343e;
+  --blue:#2f6079;
+  --green:#16734a;
+  --green-soft:#eaf6ef;
+  --amber:#8a5800;
+  --amber-soft:#fff5df;
+  --out:#8a3a34;
+  --out-soft:#fdeeec;
+  --chip:#eef2f3;
+  --shadow:0 10px 34px #20343e1f;
+  --display:"IBM Plex Sans Condensed","Helvetica Neue",Arial,sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#101a20;
+    --sheet:#182630;
+    --ink:#e7edef;
+    --ink-soft:#b8c6cc;
+    --muted:#8b9aa1;
+    --line:#2b3d47;
+    --rule:#3b5260;
+    --red:#f0574d;
+    --blue:#7fb2cc;
+    --green:#4fc48a;
+    --green-soft:#12301f;
+    --amber:#e0a63a;
+    --amber-soft:#332714;
+    --out:#e08a80;
+    --out-soft:#331d1b;
+    --chip:#21323c;
+    --shadow:0 10px 34px #0006;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#101a20;--sheet:#182630;--ink:#e7edef;--ink-soft:#b8c6cc;--muted:#8b9aa1;
+  --line:#2b3d47;--rule:#3b5260;--red:#f0574d;--blue:#7fb2cc;--green:#4fc48a;
+  --green-soft:#12301f;--amber:#e0a63a;--amber-soft:#332714;--out:#e08a80;
+  --out-soft:#331d1b;--chip:#21323c;--shadow:0 10px 34px #0006;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font:15px/1.5 var(--body);
+  padding:28px 16px 64px;
+}
+img{max-width:100%}
+
+/* ---------------------------------------------------------- deck frame */
+.deck{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+
+.deckhead{
+  display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
+  gap:14px;padding-bottom:14px;border-bottom:2px solid var(--navy);margin-bottom:2px;
+}
+.deckhead h1{
+  font:700 21px/1.1 var(--display);margin:0;letter-spacing:-.2px;
+  display:flex;align-items:center;gap:11px;
+}
+.deckhead .mark{
+  width:22px;height:22px;background:var(--red);flex:none;
+  clip-path:polygon(0 0,100% 0,100% 25%,29% 25%,29% 100%,0 100%);
+}
+.deckhead p{margin:0;font:400 12px/1.4 var(--mono);color:var(--muted)}
+.deckhead a{color:var(--blue)}
+
+/* ------------------------------------------------------------- a sheet */
+.sheet{
+  position:relative;background:var(--sheet);border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  display:grid;grid-template-columns:34px 1fr;
+  min-height:640px;
+  break-inside:avoid;
+}
+.sheet-rail{
+  background:var(--navy);color:#fff;
+  display:flex;align-items:flex-start;justify-content:center;padding-top:16px;
+}
+.sheet-rail span{
+  font:500 11px/1 var(--mono);letter-spacing:2px;
+  writing-mode:vertical-rl;text-orientation:mixed;
+}
+.sheet-body{
+  padding:34px 38px 0;display:flex;flex-direction:column;gap:20px;min-width:0;
+}
+.eyebrow{
+  font:500 11px/1 var(--mono);letter-spacing:1.6px;text-transform:uppercase;
+  color:var(--red);
+}
+.sheet h2{
+  font:700 clamp(27px,3.4vw,38px)/1.08 var(--display);margin:0;
+  letter-spacing:-.6px;text-wrap:balance;max-width:22ch;
+}
+.sheet h2.wide{max-width:30ch}
+.lede{
+  font-size:16px;line-height:1.55;color:var(--ink-soft);margin:0;max-width:64ch;
+}
+.lede strong{color:var(--ink);font-weight:600}
+
+/* ------------------------------------------------- title block (footer) */
+.titleblock{
+  margin-top:auto;border-top:1px solid var(--rule);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.tb-cell{padding:9px 14px 11px 0;border-right:1px solid var(--line);min-width:0}
+.tb-cell:last-child{border-right:0;padding-right:0}
+.tb-key{
+  font:500 9px/1 var(--mono);letter-spacing:1.3px;text-transform:uppercase;
+  color:var(--muted);display:block;margin-bottom:5px;
+}
+.tb-val{font:500 11px/1.3 var(--mono);color:var(--ink-soft);display:block}
+
+/* ----------------------------------------------------------- utilities */
+.cols{display:grid;gap:18px}
+.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+.numbered{list-style:none;margin:0;padding:0;display:grid;gap:15px}
+.numbered li{display:grid;grid-template-columns:30px 1fr;gap:13px;align-items:start}
+.numbered .n{
+  font:500 11px/1.5 var(--mono);color:var(--red);
+  border-top:2px solid var(--red);padding-top:4px;
+}
+.numbered h3{font:600 14px/1.35 var(--body);margin:0 0 4px}
+.numbered p{margin:0;font-size:14px;line-height:1.5;color:var(--ink-soft)}
+
+.stat{border-top:2px solid var(--navy);padding-top:10px}
+.sheet-body>.push{margin-top:auto}
+.sheet-body>.push+.titleblock{margin-top:26px}
+.stat b{display:block;font:700 30px/1 var(--display);letter-spacing:-.8px;font-variant-numeric:tabular-nums}
+.stat span{display:block;font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.4}
+
+.note{
+  font:400 12.5px/1.5 var(--body);color:var(--muted);
+  border-left:2px solid var(--rule);padding-left:13px;max-width:70ch;
+}
+
+/* ------------------------------------------------- product mock pieces */
+.mock{
+  border:1px solid var(--line);border-radius:5px;background:var(--sheet);
+  overflow:hidden;min-width:0;
+}
+.mock-head{
+  padding:9px 12px;border-bottom:1px solid var(--line);background:var(--chip);
+  display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;
+}
+.mock-head h4{font:600 12px/1.2 var(--body);margin:0}
+.mock-body{padding:12px;display:grid;gap:10px}
+.badge{
+  font:500 10px/1 var(--mono);letter-spacing:.4px;padding:5px 8px;border-radius:3px;
+  white-space:nowrap;
+}
+.badge-warn{background:var(--amber-soft);color:var(--amber)}
+.badge-ok{background:var(--green-soft);color:var(--green)}
+.badge-out{background:var(--out-soft);color:var(--out)}
+
+.rec{border:1px solid var(--line);border-radius:4px;padding:10px 11px;display:grid;gap:6px}
+.rec-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.rec-id{font:500 11px/1.2 var(--mono);color:var(--ink)}
+.rec-score{font:400 10px/1.2 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.rec-claim{font-size:12.5px;line-height:1.45;color:var(--ink-soft)}
+.rec-tags{display:flex;gap:5px;flex-wrap:wrap}
+.rec.is-out{background:var(--out-soft);border-color:#e9c8c4}
+.rec.is-ok{border-color:#bfe0cd}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .rec.is-out{border-color:#5c3330}
+  :root:not([data-theme="light"]) .rec.is-ok{border-color:#2c5a43}
+}
+:root[data-theme="dark"] .rec.is-out{border-color:#5c3330}
+:root[data-theme="dark"] .rec.is-ok{border-color:#2c5a43}
+
+/* --------------------------------------------------------------- table */
+.tbl-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}
+caption{text-align:left;font:500 11px/1 var(--mono);letter-spacing:1.2px;
+  text-transform:uppercase;color:var(--muted);padding-bottom:9px}
+th,td{text-align:left;padding:9px 12px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 10px/1.2 var(--mono);letter-spacing:1.1px;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+td code{font:500 12px/1.4 var(--mono);color:var(--ink)}
+td.num{font-variant-numeric:tabular-nums;font-family:var(--mono);white-space:nowrap}
+
+/* -------------------------------------------------------------- navy sheet */
+.sheet.invert{background:var(--sheet-alt);border-color:var(--navy)}
+.sheet.invert .sheet-rail{background:#16262e}
+.sheet.invert h2,.sheet.invert .stat b{color:#fff}
+.sheet.invert .lede{color:#bccbd1}
+.sheet.invert .lede strong{color:#fff}
+.sheet.invert .eyebrow{color:#ff8a80}
+.sheet.invert .titleblock{border-top-color:#3d5563}
+.sheet.invert .tb-cell{border-right-color:#2c4250}
+.sheet.invert .tb-key{color:#7f949d}
+.sheet.invert .tb-val{color:#cdd9de}
+.sheet.invert .stat{border-top-color:var(--red)}
+.sheet.invert .stat span{color:#a3b4bb}
+.sheet.invert .note{color:#a3b4bb;border-left-color:#3d5563}
+.sheet.invert .formula{background:#16262e;border-color:#31485700;color:#dbe4e8}
+.sheet.invert th{color:#8fa2aa}
+.sheet.invert td{border-bottom-color:#2c4250;color:#cdd9de}
+.sheet.invert td code{color:#fff}
+
+.formula{
+  font:500 13px/1.7 var(--mono);background:var(--chip);border:1px solid var(--line);
+  border-radius:4px;padding:13px 15px;overflow-x:auto;color:var(--ink);
+}
+.formula em{font-style:normal;color:var(--red)}
+
+.kv{display:grid;gap:9px;margin:0}
+.kv div{display:grid;grid-template-columns:118px 1fr;gap:12px;font-size:13.5px;align-items:baseline}
+.kv dt{font:500 10px/1.5 var(--mono);letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.kv dd{margin:0;color:var(--ink-soft)}
+
+.pill{
+  display:inline-block;font:500 10px/1 var(--mono);letter-spacing:.5px;
+  padding:5px 8px;border:1px solid var(--rule);border-radius:99px;color:var(--muted);
+}
+
+.endnote{
+  max-width:1180px;margin:34px auto 0;font:400 12px/1.6 var(--body);color:var(--muted);
+  border-top:1px solid var(--rule);padding-top:14px;
+}
+.endnote a{color:var(--blue)}
+
+a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+
+/* ------------------------------------------------------------ responsive */
+@media (max-width:860px){
+  .cols-2,.cols-3,.cols-4{grid-template-columns:1fr}
+  .titleblock{grid-template-columns:repeat(2,1fr)}
+  .tb-cell:nth-child(2){border-right:0;padding-right:0}
+  .sheet{min-height:0}
+  .sheet-body{padding:26px 22px 0}
+}
+@media (max-width:460px){
+  body{padding:18px 12px 44px}
+  .sheet{grid-template-columns:22px 1fr}
+  .sheet-body{padding:22px 16px 0}
+  .titleblock{grid-template-columns:1fr}
+  .tb-cell{border-right:0;padding-right:0;border-bottom:1px solid var(--line)}
+  .tb-cell:last-child{border-bottom:0}
+  .numbered li{grid-template-columns:22px 1fr;gap:10px}
+  .kv div{grid-template-columns:1fr;gap:3px}
+}
+
+/* ---------------------------------------------------------------- print */
+@page{size:A4 landscape;margin:0}
+@media print{
+  :root{
+    color-scheme:light;
+    --ground:#fff;--sheet:#fff;--ink:#18232b;--ink-soft:#3d4d56;--muted:#66747d;
+    --line:#d7dfe2;--rule:#b8c4c9;--red:#df3128;--blue:#2f6079;--green:#16734a;
+    --green-soft:#eaf6ef;--amber:#8a5800;--amber-soft:#fff5df;--out:#8a3a34;
+    --out-soft:#fdeeec;--chip:#eef2f3;--shadow:none;
+  }
+  body{padding:0;background:#fff}
+  .deck{max-width:none;gap:0}
+  .deckhead,.endnote{display:none}
+  .sheet{
+    border:0;box-shadow:none;break-after:page;page-break-after:always;
+    height:100vh;min-height:0;
+  }
+  .sheet:last-child{break-after:auto;page-break-after:auto}
+  .sheet-body{padding:26px 30px 0}
+  .sheet h2{font-size:31px}
+  .sheet.invert{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+  <div class="deckhead">
+    <h1><span class="mark" aria-hidden="true"></span>TraceLine — pitch sheets</h1>
+    <p>11 sheets · Theme 2 · <a href="https://juliaj3.github.io/traceline-prototype/">live prototype</a> · print to PDF for slides</p>
+  </div>
+
+  <!-- ============================================================ 01 -->
+  <section class="sheet invert">
+    <div class="sheet-rail"><span>SHEET 01</span></div>
+    <div class="sheet-body">
+      <div class="eyebrow">Theme 2 · Multimodal maintenance intelligence</div>
+      <h2 class="wide">A citation can be real, from a real page, and still wrong.</h2>
+      <p class="lede">TraceLine is a maintenance assistant whose job is not to answer faster,
+      but to <strong>refuse to answer when it cannot do it honestly</strong>. It checks whether
+      the evidence it retrieved actually applies to the machine in front of you — and when it
+      cannot tell, it says which single field would settle it.</p>
+      <div class="cols cols-4 push">
+        <div class="stat"><b>8</b><span>synthetic records, BM25-indexed</span></div>
+        <div class="stat"><b>5</b><span>applicability verdicts, metadata-derived</span></div>
+        <div class="stat"><b>41</b><span>unit tests over the rule set</span></div>
+        <div class="stat"><b>1</b><span>third-party runtime dependency</span></div>
+      </div>
+      <div class="titleblock">
+        <div class="tb-cell"><span class="tb-key">Project</span><span class="tb-val">TraceLine</span></div>
+        <div class="tb-cell"><span class="tb-key">Subtitle</span><span class="tb-val">Configuration-aware maintenance evidence</span></div>
+        <div class="tb-cell"><span class="tb-key">Build</span><span class="tb-val">Browser prototype · no backend</span></div>
+        <div class="tb-cell"><span class="tb-key">Corpus</span><span class="tb-val">Synthetic throughout</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ 02 -->
+  <section class="sheet">
+    <div class="sheet-rail"><span>SHEET 02</span></div>
+    <div class="sheet-body">
+      <div class="eyebrow">The problem</div>
+      <h2>The wrong-revision answer looks exactly like the right one.</h2>
+      <p class="lede">A technician asks what a fault code means. Search returns a real document,
+      with a real page number, stating a real answer — for a different firmware revision of that
+      machine. <strong>The citation is the problem.</strong> It makes a wrong answer look verified,
+      and someone who would have double-checked an unsourced answer does not double-check a cited one.</p>
+
+      <div class="cols cols-2">
+        <div class="mock">
+          <div class="mock-head">
+            <h4>What a conventional assistant returns</h4>
+            <span class="badge badge-ok">Answered · 1 source</span>
+          </div>
+          <div class="mock-body">
+            <div class="rec">
+              <div class="rec-top">
+                <span class="rec-id">SRC-021 · p. 11 · table 3</span>
+                <span class="rec-score">7.63</span>
+              </div>
+              <p class="rec-claim">On firmware 2.3.x, the table maps F12 to supply input below a
+              configured threshold.</p>
+              <div class="rec-tags"><span class="pill">Troubleshooting table</span><span class="pill">firmware 2.3.8</span></div>
+            </div>
+            <p class="note">Real document. Real page. Correct content — for firmware 2.3.8. Confirm
+            2.4.1 on this asset and a different record applies. Nothing in the sentence says so.</p>
+          </div>
+        </div>
+        <div>
+          <ol class="numbered">
+            <li><span class="n">01</span><div>
+              <h3>Applicability is invisible in the text</h3>
+              <p>Whether a document covers this model, firmware and supply class lives in
+              metadata and revision tables — not in the sentence that answers the question.</p>
+            </div></li>
+            <li><span class="n">02</span><div>
+              <h3>Documents disagree and never say so</h3>
+              <p>Two references describe the same fault code correctly, for different releases.
+              Neither one references the other.</p>
+            </div></li>
+            <li><span class="n">03</span><div>
+              <h3>The deciding field is often unknown</h3>
+              <p>The technician may not know the installed firmware. A system that quietly
+              assumes a value has invented its most important input.</p>
+            </div></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="titleblock">
+        <div class="tb-cell"><span class="tb-key">Sheet</span><span class="tb-val">02 / 11</span></div>
+        <div class="tb-cell"><span class="tb-key">Section</span><span class="tb-val">Problem statement</span></div>
+        <div class="tb-cell"><span class="tb-key">Criterion</span><span class="tb-val">Problem–solution fit · 20%</span></div>
+        <div class="tb-cell"><span class="tb-key">Consequence</span><span class="tb-val">Unsafe procedure, missed root cause, teardown</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ 03 -->
+  <section class="sheet">
+    <div class="sheet-rail"><span>SHEET 03</span></div>
+    <div class="sheet-body">
+      <div class="eyebrow">The move</div>
+      <h2>Applicability is a blocking condition, not a metadata field to display.</h2>
+      <p class="lede">Most systems retrieve, rank, and answer. TraceLine inserts one step:
+      before a record can support a statement, its <strong>declared scope</strong> must cover the
+      <strong>confirmed</strong> asset configuration. Fail that and the record stays on screen,
+      labelled with why it was excluded. Cannot evaluate it, and no answer is produced at all.</p>
+
+      <div class="cols cols-3">
+        <div>
+          <ol class="numbered">
+            <li><span class="n">01</span><div><h3>Retrieve</h3>
+              <p>BM25 over the corpus. A query naming a fault code restricts citable records to
+              carriers of that code.</p></div></li>
+          </ol>
+        </div>
+        <div>
+          <ol class="numbered">
+            <li><span class="n">02</span><div><h3>Evaluate scope</h3>
+              <p>Compare each record's declared model, firmware and supply against confirmed
+              context. Five possible verdicts.</p></div></li>
+          </ol>
+        </div>
+        <div>
+          <ol class="numbered">
+            <li><span class="n">03</span><div><h3>Decide, or decline</h3>
+              <p>Scope the answer, surface the disagreement, or abstain and name the missing
+              field. Never guess.</p></div></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="tbl-wrap">
+        <table>
+          <caption>Four things the verdict can be, and what the interface says</caption>
+          <thead><tr><th>Verdict</th><th>Badge shown</th><th>What it means</th></tr></thead>
+          <tbody>
+            <tr><td><code>conflict</code></td><td><span class="badge badge-warn">Clarification needed</span></td><td>Sources disagree and the deciding field is unconfirmed. Both cited, neither selected.</td></tr>
+            <tr><td><code>scoped</code></td><td><span class="badge badge-ok">Context applied · scoped answer</span></td><td>One record's declared scope covers the confirmed context. Others excluded with reasons.</td></tr>
+            <tr><td><code>abstain</code></td><td><span class="badge badge-warn">Insufficient evidence</span></td><td>No record's scope matches, or nothing addresses the question. Missing evidence named.</td></tr>
+            <tr><td><code>model-scoped-abstain</code></td><td><span class="badge badge-warn">Out of model scope</span></td><td>Evidence exists, but for a different equipment platform.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="titleblock">
+        <div class="tb-cell"><span class="tb-key">Sheet</span><span class="tb-val">03 / 11</span></div>
+        <div class="tb-cell"><span class="tb-key">Section</span><span class="tb-val">Approach</span></div>
+        <div class="tb-cell"><span class="tb-key">Criterion</span><span class="tb-val">Innovation &amp; creativity · 20%</span></div>
+        <div class="tb-cell"><span class="tb-key">Rule source</span><span class="tb-val">Record metadata · never inferred from prose</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ 04 -->
+  <section class="sheet">
+    <div class="sheet-rail"><span>SHEET 04</span></div>
+    <div class="sheet-body">
+      <div class="eyebrow">Behaviour · the core scenario</div>
+      <h2>Asked about F12 with firmware unconfirmed, it cites both and picks neither.</h2>
+
+      <div class="cols cols-2">
+        <div class="mock">
+          <div class="mock-head">
+            <h4>Evidence ledger · AX-480 · asset 00481</h4>
+            <span class="badge badge-warn">Clarification needed</span>
+          </div>
+          <div class="mock-body">
+            <div class="rec">
+              <div class="rec-top"><span class="rec-id">SRC-014 · p. 4 · region 2</span><span class="rec-score">7.71</span></div>
+              <p class="rec-claim">On firmware 2.4.x, F12 is recorded when the controller cannot
+              confirm the configured supply class during startup diagnostics.</p>
+              <div class="rec-tags"><span class="pill">Service note</span><span class="pill">firmware 2.4.1</span></div>
+            </div>
+            <div class="rec">
+              <div class="rec-top"><span class="rec-id">SRC-021 · p. 11 · table 3</span><span class="rec-score">7.63</span></div>
+              <p class="rec-claim">On firmware 2.3.x, the table maps F12 to supply input below a
+              configured threshold.</p>
+              <div class="rec-tags"><span class="pill">Troubleshooting table</span><span class="pill">firmware 2.3.8</span></div>
+            </div>
+            <p class="note"><strong>Needed to resolve:</strong> confirm controller firmware from
+            the asset or release record.</p>
+          </div>
+        </div>
+        <div class="cols" style="gap:16px">
+          <div class="mock">
+            <div class="mock-head"><h4>Also retrieved · not cited</h4></div>
+            <div class="mock-body">
+              <div class="rec">
+                <div class="rec-top"><span class="rec-id">SRE-071 · entry 14 · field note</span><span class="rec-score">7.12</span></div>
+                <p class="rec-claim">A technician recorded a prior F12 event on this asset and noted
+                that it cleared after a site power interruption.</p>
+              </div>
+              <p class="note">Shown and labelled, excluded from both the disagreement and cited
+              support. <strong>A field note is not a controlled document.</strong></p>
+            </div>
+          </div>
+          <dl class="kv">
+            <div><dt>Detected by</dt><dd>Same fault code, disjoint firmware scopes, differing claims — derived from metadata, nothing hardcoded by record id.</dd></div>
+            <div><dt>Not done</dt><dd>Averaging the two answers, preferring the newer document, or picking the higher BM25 score.</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="titleblock">
+        <div class="tb-cell"><span class="tb-key">Sheet</span><span class="tb-val">04 / 11</span></div>
+        <div class="tb-cell"><span class="tb-key">Section</span><span class="tb-val">Conflict state</span></div>
+        <div class="tb-cell"><span class="tb-key">Criterion</span><span class="tb-val">Innovation · 20% · Technical · 25%</span></div>
+        <div class="tb-cell"><span class="tb-key">Evidence classes</span><span class="tb-val">Document / observation, kept separate</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ 05 -->
+  <section class="sheet">
+    <div class="sheet-rail"><span>SHEET 05</span></div>
+    <div class="sheet-body">
+      <div class="eyebrow">Behaviour · resolution</div>
+      <h2>Confirm 2.4.1 and the scope resolves. Confirm 2.3.8 and it inverts.</h2>
+      <p class="lede">Exclusion is <strong>visible, with its reason</strong> — never a silent drop.
+      No record is ever both cited and excluded in the same answer.</p>
+
+      <div class="cols cols-2">
+        <div class="mock">
+          <div class="mock-head"><h4>Firmware 2.4.1 · confirmed</h4><span class="badge badge-ok">Context applied · scoped answer</span></div>
+          <div class="mock-body">
+            <div class="rec is-ok">
+              <div class="rec-top"><span class="rec-id">SRC-014 · p. 4 · region 2</span><span class="rec-score">7.71</span></div>
+              <p class="rec-claim">Service note · firmware 2.4 series</p>
+              <div class="rec-tags"><span class="badge badge-ok">Applies to confirmed context</span></div>
+            </div>
+            <div class="rec is-ok">
+              <div class="rec-top"><span class="rec-id">SRC-088 · p. 5 · callout B</span><span class="rec-score">6.00</span></div>
+              <p class="rec-claim">Control wiring drawing · supply sensing</p>
+              <div class="rec-tags"><span class="badge badge-ok">Applies to confirmed context</span></div>
+            </div>
+            <div class="rec is-out">
+              <div class="rec-top"><span class="rec-id">SRC-021 · p. 11 · table 3</span><span class="rec-score">7.63</span></div>
+              <p class="rec-claim">Troubleshooting table · legacy release</p>
+              <div class="rec-tags"><span class="badge badge-out">Different firmware scope</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mock">
+          <div class="mock-head"><h4>Firmware 2.3.8 · confirmed</h4><span class="badge badge-ok">Context applied · scoped answer</span></div>
+          <div class="mock-body">
+            <div class="rec is-ok">
+              <div class="rec-top"><span class="rec-id">SRC-021 · p. 11 · table 3</span><span class="rec-score">7.63</span></div>
+              <p class="rec-claim">Troubleshooting table · legacy release</p>
+              <div class="rec-tags"><span class="badge badge-ok">Applies to confirmed context</span></div>
+            </div>
+            <div class="rec is-out">
+              <div class="rec-top"><span class="rec-id">SRC-014 · p. 4 · region 2</span><span class="rec-score">7.71</span></div>
+              <p class="rec-claim">Service note · firmware 2.4 series</p>
+              <div class="rec-tags"><span class="badge badge-out">Different firmware scope</span></div>
+            </div>
+            <div class="rec is-out">
+              <div class="rec-top"><span class="rec-id">SRC-088 · p. 5 · callout B</span><span class="rec-score">6.00</span></div>
+              <p class="rec-claim">Control wiring drawing · supply sensing</p>
+              <div class="rec-tags"><span class="badge badge-out">Different firmware scope</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="note">The higher-scoring record is excluded in the right-hand case: ranking does not
+      override scope. Both states also carry a standing note that supply class is unconfirmed — not
+      required for this answer, but still unverified, and said rather than assumed.</p>
+
+      <div class="titleblock">
+        <div class="tb-cell"><span class="tb-key">Sheet</span><span class="tb-val">05 / 11</span></div>
+        <div class="tb-cell"><span class="tb-key">Section</span><span class="tb-val">Scoped answer</span></div>
+        <div class="tb-cell"><span class="tb-key">Criterion</span><span class="tb-val">User experience · 10%</span></div>
+        <div class="tb-cell"><span class="tb-key">Invariant</span><span class="tb-val">Never both cited and excluded</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ 06 -->
+  <section class="sheet">
+    <div class="sheet-rail"><span>SHEET 06</span></div>
+    <div class="sheet-body">
+      <div class="eyebrow">Multimodal input</div>
+      <h2>A photo suggests. A technician decides.</h2>
+      <p class="lede">Client-side OCR reads a nameplate image and writes firmware into the asset
+      context as an <code>ocr</code>-sourced <strong>suggestion</strong>. The answer does not change.
+      Only explicit confirmation promotes it to confirmed context — so machine perception informs
+      the human and never substitutes for them.</p>
+
+      <div class="cols cols-2">
+        <div class="mock">
+          <div class="mock-head"><h4>Nameplate capture</h4><span class="badge badge-warn">OCR suggestion · unconfirmed</span></div>
+          <div class="mock-body">
+            <dl class="kv">
+              <div><dt>Suggested</dt><dd>Firmware <strong>2.4.1</strong>, with the OCR confidence the engine reported</dd></div>
+              <div><dt>If the read is dirty</dt><dd>Nameplate OCR drops and invents separators, so a run like <code>241</code> is matched against known releases and labelled <em>reconstructed</em> — never resolved into a version that does not exist. A match against nothing known returns no suggestion at all.</dd></div>
+              <div><dt>Ledger</dt><dd>Unchanged. Still <strong>Clarification needed</strong>, still asking for firmware.</dd></div>
+            </dl>
+            <p class="note">An OCR reading is a suggestion. TraceLine will not scope an answer to
+            a value the technician has not confirmed.</p>
+          </div>
+        </div>
+        <div class="tbl-wrap">
+          <table>
+            <caption>Field provenance is typed, and only two types count as confirmed</caption>
+            <thead><tr><th>Source</th><th>Origin</th><th>Can scope an answer</th></tr></thead>
+            <tbody>
+              <tr><td><code>system</code></td><td>Asset record</td><td><span class="badge badge-ok">Yes</span></td></tr>
+              <tr><td><code>user</code></td><td>Technician confirmed</td><td><span class="badge badge-ok">Yes</span></td></tr>
+              <tr><td><code>ocr</code></td><td>Image read</td><td><span class="badge badge-out">No</span></td></tr>
+              <tr><td><code>unknown</code></td><td>Absent</td><td><span class="badge badge-out">No</span></td></tr>
+            </tbody>
+          </table>
+          <p class="note" style="margin-top:14px"><strong>Unconfirmed is a first-class state.</strong>
+          &ldquo;No verdict available&rdquo; is represented distinctly from &ldquo;fails the check&rdquo;.
+          Collapsing those two is what makes a system either over-cite or silently drop valid evidence.</p>
+        </div>
+      </div>
+
+      <div class="titleblock">
+        <div class="tb-cell"><span class="tb-key">Sheet</span><span class="tb-val">06 / 11</span></div>
+        <div class="tb-cell"><span class="tb-key">Section</span><span class="tb-val">Provenance</span></div>
+        <div class="tb-cell"><span class="tb-key">Criterion</span><span class="tb-val">Innovation · 20%</span></div>
+        <div class="tb-cell"><span class="tb-key">Engine</span><span class="tb-val">Tesseract.js 5.1.0 · in-browser WASM</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ 07 -->
+  <section class="sheet">
+    <div class="sheet-rail"><span>SHEET 07</span></div>
+    <div class="sheet-body">
+      <div class="eyebrow">Behaviour · absence</div>
+      <h2>Two different ways to have no answer, and both are stated.</h2>
+
+      <div class="cols cols-2">
+        <div class="mock">
+          <div class="mock-head"><h4>The record exists — its scope does not match</h4><span class="badge badge-warn">Insufficient evidence</span></div>
+          <div class="mock-body">
+            <dl class="kv">
+              <div><dt>Asked</dt><dd>What is fault F18?</dd></div>
+              <div><dt>Context</dt><dd>Firmware 2.4.1, confirmed</dd></div>
+              <div><dt>Returned</dt><dd>No claims. F18 appears only in the 2.3.8 table.</dd></div>
+              <div><dt>Missing</dt><dd>A document whose stated firmware scope includes 2.4.1.</dd></div>
+            </dl>
+            <div class="rec is-out">
+              <div class="rec-top"><span class="rec-id">SRC-021 · p. 11 · table 3</span><span class="rec-score">retrieved</span></div>
+              <p class="rec-claim">Retrieved, ranked, then excluded — still on screen with its reason.</p>
+              <div class="rec-tags"><span class="badge badge-out">Different firmware scope</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mock">
+          <div class="mock-head"><h4>Nothing addresses the question at all</h4><span class="badge badge-warn">Insufficient evidence</span></div>
+          <div class="mock-body">
+            <dl class="kv">
+              <div><dt>Asked</dt><dd>What is the safe torque value for this motor?</dd></div>
+              <div><dt>Returned</dt><dd>No claims, no citations.</dd></div>
+              <div><dt>Missing</dt><dd>An approved equipment document covering the requested topic; the exact asset configuration the question depends on.</dd></div>
+            </dl>
+            <p class="note">Asking about a fault code absent from the corpus also abstains. It will
+            not cite a record because the word &ldquo;fault&rdquo; appears in it.</p>
+          </div>
+        </div>
+      </div>
+      <p class="note"><strong>Absence is a valid answer.</strong> An assistant that says
+      <em>I need one more fact</em> is worth more to a technician than one that answers everything
+      confidently and is occasionally, invisibly wrong.</p>
+
+      <div class="titleblock">
+        <div class="tb-cell"><span class="tb-key">Sheet</span><span class="tb-val">07 / 11</span></div>
+        <div class="tb-cell"><span class="tb-key">Section</span><span class="tb-val">Abstention</span></div>
+        <div class="tb-cell"><span class="tb-key">Criterion</span><span class="tb-val">Problem–solution fit · 20%</span></div>
+        <div class="tb-cell"><span class="tb-key">Rule</span><span class="tb-val">Exact-identifier queries restrict citable records</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ 08 -->
+  <section class="sheet invert">
+    <div class="sheet-rail"><span>SHEET 08</span></div>
+    <div class="sheet-body">
+      <div class="eyebrow">Demonstrated, not asserted</div>
+      <h2 class="wide">Turn the applicability check off and the failure reproduces on demand.</h2>
+      <p class="lede">The prototype ships its own control condition. One toggle removes the
+      applicability filter, and the same F12 question — on an <strong>AX-480</strong> asset with
+      firmware 2.4.1 confirmed — cites four records. The top-ranked one is a troubleshooting table
+      for the <strong>AX-320</strong> platform.</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <caption>Same question, same confirmed context, filter off</caption>
+          <thead><tr><th>Rank</th><th>Record</th><th>Declared model</th><th>Declared firmware</th><th class="num">BM25</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td><code>SRC-052</code> Troubleshooting table · AX-320 platform</td><td>AX-320</td><td>1.9.4</td><td class="num">7.77</td></tr>
+            <tr><td class="num">2</td><td><code>SRC-014</code> Service note · firmware 2.4 series</td><td>AX-480</td><td>2.4.1</td><td class="num">7.71</td></tr>
+            <tr><td class="num">3</td><td><code>SRC-021</code> Troubleshooting table · legacy release</td><td>AX-480</td><td>2.3.8</td><td class="num">7.63</td></tr>
+            <tr><td class="num">4</td><td><code>SRC-088</code> Control wiring drawing · supply sensing</td><td>AX-480</td><td>2.4.1</td><td class="num">6.00</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Lexical similarity ranks the wrong-platform table first, because it is the
+      document that talks about F12 most directly. That is not a retrieval bug to tune away — it is
+      the expected behaviour of similarity search, and the reason applicability has to be a separate
+      gate. Turn the check back on and SRC-052 is excluded, labelled
+      <strong>Different equipment model</strong>.</p>
+
+      <div class="titleblock">
+        <div class="tb-cell"><span class="tb-key">Sheet</span><span class="tb-val">08 / 11</span></div>
+        <div class="tb-cell"><span class="tb-key">Section</span><span class="tb-val">Control condition</span></div>
+        <div class="tb-cell"><span class="tb-key">Criterion</span><span class="tb-val">Problem–solution fit · 20%</span></div>
+        <div class="tb-cell"><span class="tb-key">Where</span><span class="tb-val">Retrieval mode · Metadata filter</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ 09 -->
+  <section class="sheet">
+    <div class="sheet-rail"><span>SHEET 09</span></div>
+    <div class="sheet-body">
+      <div class="eyebrow">How it is built</div>
+      <h2>A DOM-free rule engine, tested directly, with one runtime dependency.</h2>
+
+      <div class="cols cols-2">
+        <div class="cols" style="gap:16px">
+          <div class="formula">
+score(<em>t</em>) = idf(<em>t</em>) · ( tf · (k₁ + 1) )
+           ───────────────────────────────
+           tf + k₁ · (1 − b + b · len/avglen)
+
+k₁ = 1.4   b = 0.72
+idf(<em>t</em>) = ln( 1 + (N − n + 0.5) / (n + 0.5) )
+          </div>
+          <p class="note">BM25 written from scratch so the scoring is inspectable and the tests can
+          assert on term frequencies, document lengths and the idf map directly. Scores are shown
+          per record in the interface rather than hidden behind a relevance bar.</p>
+        </div>
+        <div class="tbl-wrap">
+          <table>
+            <caption>Applicability, evaluated in this order</caption>
+            <thead><tr><th>#</th><th>Check</th><th>Verdict when it fails</th></tr></thead>
+            <tbody>
+              <tr><td class="num">1</td><td>Record model ≠ confirmed model</td><td><code>out-of-model</code></td></tr>
+              <tr><td class="num">2</td><td>Record supply ≠ confirmed supply</td><td><code>out-of-supply</code></td></tr>
+              <tr><td class="num">3</td><td>Firmware not confirmed</td><td><code>unresolved</code></td></tr>
+              <tr><td class="num">4</td><td>Confirmed firmware outside record scope</td><td><code>out-of-firmware</code></td></tr>
+              <tr><td class="num">5</td><td>All checks pass</td><td><code>applicable</code></td></tr>
+            </tbody>
+          </table>
+          <p class="note" style="margin-top:14px">Order matters. <code>unresolved</code> is returned
+          <em>before</em> the firmware comparison, so a missing value can never be read as a failed
+          check.</p>
+        </div>
+      </div>
+
+      <dl class="kv" style="grid-template-columns:1fr">
+        <div><dt>Stack</dt><dd>Hand-written HTML and CSS, native ES modules, no framework. Tesseract.js 5.1.0 from a CDN is the only third-party runtime dependency.</dd></div>
+        <div><dt>Not present</dt><dd>No <code>package.json</code>, lockfile, <code>node_modules</code>, bundler, transpiler, CSS preprocessor, backend, database, API key, or environment variable.</dd></div>
+        <div><dt>Tests</dt><dd><code>node --test</code> · 41 tests · ~126 ms · named for the failure each one forbids. The engine imports no DOM, so the rules are tested without a browser.</dd></div>
+      </dl>
+
+      <div class="titleblock">
+        <div class="tb-cell"><span class="tb-key">Sheet</span><span class="tb-val">09 / 11</span></div>
+        <div class="tb-cell"><span class="tb-key">Section</span><span class="tb-val">Architecture</span></div>
+        <div class="tb-cell"><span class="tb-key">Criterion</span><span class="tb-val">Technical excellence · 25%</span></div>
+        <div class="tb-cell"><span class="tb-key">Files</span><span class="tb-val">index.html · engine.js · app.js</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ 10 -->
+  <section class="sheet">
+    <div class="sheet-rail"><span>SHEET 10</span></div>
+    <div class="sheet-body">
+      <div class="eyebrow">Honest boundaries</div>
+      <h2>What is real in this build, and what is not.</h2>
+      <p class="lede">A prototype that overstates itself is worth less than one that states its
+      edges. These are the edges.</p>
+
+      <div class="cols cols-2">
+        <div class="mock">
+          <div class="mock-head"><h4>Working</h4><span class="badge badge-ok">In the build</span></div>
+          <div class="mock-body">
+            <p class="rec-claim">BM25 retrieval with visible per-record scores · exact-identifier
+            handling · five-verdict applicability · metadata-derived conflict detection · typed
+            field provenance · client-side OCR with noisy-read reconstruction · documented claims
+            separated from field observations · structured abstention that names what is missing ·
+            citation links that open the cited region · keyboard-operable evidence list, ARIA live
+            regions, layout holding at 400&nbsp;px.</p>
+          </div>
+        </div>
+        <div class="mock">
+          <div class="mock-head"><h4>Not built</h4><span class="badge badge-out">Stated, not implied</span></div>
+          <div class="mock-body">
+            <p class="rec-claim">No semantic embeddings or vector store — retrieval is lexical only.
+            No PDF parsing, no real table or diagram extraction, no LLM generation, no backend, no
+            authentication, no persistence. The diagram regions are human-authored fixtures, not
+            computer-vision output. <strong>No accuracy has been measured</strong>; the idea-phase
+            targets are hypotheses to test, not results.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="note">Every equipment identifier, document title, excerpt, date and revision is
+      <strong>synthetic</strong>. Nothing is reproduced from manufacturer documentation, and no
+      integration or endorsement is claimed. TraceLine does not control equipment, diagnose physical
+      faults, or authorise work — the interface says so on every screen.</p>
+
+      <div class="titleblock">
+        <div class="tb-cell"><span class="tb-key">Sheet</span><span class="tb-val">10 / 11</span></div>
+        <div class="tb-cell"><span class="tb-key">Section</span><span class="tb-val">Scope &amp; limits</span></div>
+        <div class="tb-cell"><span class="tb-key">Criterion</span><span class="tb-val">Technical excellence · 25%</span></div>
+        <div class="tb-cell"><span class="tb-key">Verification</span><span class="tb-val">EVALUATION.md</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ 11 -->
+  <section class="sheet invert">
+    <div class="sheet-rail"><span>SHEET 11</span></div>
+    <div class="sheet-body">
+      <div class="eyebrow">Why it scales</div>
+      <h2 class="wide">The rules are pure functions over record metadata.</h2>
+      <p class="lede">Nothing in the approach is specific to drives or firmware. The same rules hold
+      when the corpus becomes an ingestion pipeline instead of a fixture array, and they apply to any
+      domain where evidence is scoped — <strong>model, serial range, supply class, region, effective
+      date</strong> — and where citing out-of-scope evidence is worse than citing nothing.</p>
+
+      <div class="cols cols-3">
+        <div class="stat"><b>01</b><span>Replace the fixture corpus with ingested records carrying the same declared-scope fields. The verdict logic does not change.</span></div>
+        <div class="stat"><b>02</b><span>Every exclusion is derived from declared metadata, so it is auditable after the fact — the minimum bar for regulated maintenance work.</span></div>
+        <div class="stat"><b>03</b><span>Next step: run the workflow against approved documents, with engineers reviewing the applicability labels.</span></div>
+      </div>
+
+      <dl class="kv" style="grid-template-columns:1fr">
+        <div><dt>Live prototype</dt><dd>juliaj3.github.io/traceline-prototype</dd></div>
+        <div><dt>Source</dt><dd>github.com/JuliaJ3/traceline-prototype</dd></div>
+        <div><dt>Documentation</dt><dd>PROJECT_SUMMARY.md · TECHNICAL_DOCUMENTATION.md · EVALUATION.md</dd></div>
+      </dl>
+
+      <div class="titleblock">
+        <div class="tb-cell"><span class="tb-key">Sheet</span><span class="tb-val">11 / 11</span></div>
+        <div class="tb-cell"><span class="tb-key">Section</span><span class="tb-val">Scalability &amp; close</span></div>
+        <div class="tb-cell"><span class="tb-key">Criterion</span><span class="tb-val">Scalability &amp; feasibility · 15%</span></div>
+        <div class="tb-cell"><span class="tb-key">Equipment control</span><span class="tb-val">Not contemplated</span></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<p class="endnote">
+  <strong>To export slides:</strong> open this file in Chrome, press ⌘P, set Destination to
+  <em>Save as PDF</em>, Layout to <em>Landscape</em>, Margins to <em>None</em>, and enable
+  <em>Background graphics</em>. Each sheet prints as one page.
+  Figures on these sheets are produced by the prototype itself; the corpus is synthetic.
+</p>
+
+</body>
+</html>
