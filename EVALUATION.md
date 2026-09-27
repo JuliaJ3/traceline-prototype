@@ -65,6 +65,3 @@ link, `aria-live` ledger updates, and layout at 400px width.
 
 These are behavior checks. They are **not** an industrial accuracy evaluation, and
 nothing here measures whether a real technician is faster or safer.
-
-potheses to test, not results.** This build
-measures neither.
