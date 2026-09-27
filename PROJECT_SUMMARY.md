@@ -118,7 +118,7 @@ equipment, diagnose physical faults, or authorize work.
 |---|---|---|
 | 01 | Project summary | This file — problem, solution, impact. |
 | 02 | Working prototype | The running application: live at `https://juliaj3.github.io/traceline-prototype/` (GitHub Pages, no backend), or locally in two commands — see [Setup instructions](TECHNICAL_DOCUMENTATION.md#setup-instructions). Eight-step verification walkthrough included there. |
-| 03 | Demo video | Recording made from the timed shot list in `DEMO_SCRIPT.md` — 3:51, opening through control condition. Link below. |
+| 03 | Demo video | [Recorded walkthrough](https://drive.google.com/file/d/10E0smvWIyzMjfRjNcn7GZlNs7me0pibc/view?usp=sharing) — made from the timed shot list in `DEMO_SCRIPT.md`, opening through control condition. |
 | 04 | Source code | https://github.com/JuliaJ3/traceline-prototype — complete, 3 source files, no build artifacts. |
 | 05 | Technical documentation | `TECHNICAL_DOCUMENTATION.md` — solution architecture, technologies used, implementation approach, setup instructions. |
 | 06 | Presentation deck | `PITCH_DECK.pdf` — 11 sheets, A4 landscape, covering problem, approach, the four demonstrated states, architecture, stated limits and scalability. Source: `PITCH_DECK.html`, which can also be presented directly in a browser. |
@@ -168,7 +168,7 @@ package installation required.
 https://github.com/JuliaJ3/traceline-prototype
 
 **Video link**
-Paste the hosted recording URL here before submitting.
+https://drive.google.com/file/d/10E0smvWIyzMjfRjNcn7GZlNs7me0pibc/view?usp=sharing
 
 **Demo link**
 https://juliaj3.github.io/traceline-prototype/ — the prototype is fully static, so
